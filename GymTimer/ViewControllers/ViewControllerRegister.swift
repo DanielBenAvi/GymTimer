@@ -2,7 +2,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class ViewController: UIViewController {
+class ViewControllerRegister: UIViewController {
 
     @IBOutlet weak var register_LBL_title: UILabel!
     
@@ -48,6 +48,13 @@ class ViewController: UIViewController {
                         print("Error: \(error!.localizedDescription)")
                     } else {
                         print("User uploaded successfully")
+                        
+                        
+                        // move to the workouts screen
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "workouts_screen")
+                        self.present(vc, animated: true, completion: nil)
+                    
                     }
                 })
             }
