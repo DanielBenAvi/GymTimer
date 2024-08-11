@@ -13,20 +13,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewControllerRegister" customModule="GymTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="qOK-Qz-ZPo">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gym Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv4-He-7E9">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="174.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="193.33333333333334"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJe-Q0-GPL">
-                                        <rect key="frame" x="0.0" y="174.33333333333334" width="393" height="146.00000000000003"/>
+                                        <rect key="frame" x="0.0" y="193.33333333333337" width="393" height="127"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -43,7 +43,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBm-S0-j0w">
-                                        <rect key="frame" x="0.0" y="611.66666666666663" width="393" height="147.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="611.66666666666663" width="393" height="230.33333333333337"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Register"/>
                                         <connections>
@@ -62,6 +62,7 @@
                             <constraint firstItem="qOK-Qz-ZPo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X4j-Un-dKD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xhL-AM-Wly"/>
                     <connections>
                         <outlet property="register_ET_email" destination="DJe-Q0-GPL" id="YeP-31-zqa"/>
                         <outlet property="register_ET_password" destination="Zzc-NC-hyf" id="TgW-Fa-Mna"/>
@@ -76,7 +77,7 @@
         <!--View Controller Workouts-->
         <scene sceneID="bdV-IE-qqj">
             <objects>
-                <viewController storyboardIdentifier="workouts_screen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8EH-t3-pL9" customClass="ViewControllerWorkouts" customModule="GymTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerWorkouts" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8EH-t3-pL9" customClass="ViewControllerWorkouts" customModule="GymTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pJS-6h-Ekf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,29 +113,37 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gym Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnl-Hz-ziY">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="232.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="187.66666666666666"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54c-br-xJ8">
-                                        <rect key="frame" x="0.0" y="232.66666666666663" width="393" height="194.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="187.66666666666669" width="393" height="156.66666666666669"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="bpH-f5-NYr">
-                                        <rect key="frame" x="0.0" y="427.00000000000006" width="393" height="194.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="344.33333333333331" width="393" height="157"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHk-4w-xhY">
-                                        <rect key="frame" x="0.0" y="621.66666666666663" width="393" height="196.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="501.33333333333331" width="393" height="158.33333333333331"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                         <connections>
                                             <action selector="action_login:" destination="PrG-3X-bYu" eventType="touchUpInside" id="XrI-qI-CCQ"/>
                                             <action selector="action_register:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ftq-aN-AIz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPY-Fk-mn3">
+                                        <rect key="frame" x="0.0" y="659.66666666666663" width="393" height="158.33333333333337"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="kGN-1n-uW4"/>
                                         </connections>
                                     </button>
                                 </subviews>

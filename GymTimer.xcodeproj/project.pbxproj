@@ -12,6 +12,7 @@
 		D406F1372C68CCF50031F0BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D406F1362C68CCF50031F0BA /* GoogleService-Info.plist */; };
 		D406F13A2C68CED80031F0BA /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F1392C68CED80031F0BA /* ViewControllerLogin.swift */; };
 		D406F13C2C68D0A60031F0BA /* ViewControllerWorkouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F13B2C68D0A60031F0BA /* ViewControllerWorkouts.swift */; };
+		D406F13F2C6902E30031F0BA /* UIViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F13E2C6902E30031F0BA /* UIViewControllerExtention.swift */; };
 		D4CC15182C68AAF100AB1326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC15172C68AAF100AB1326 /* AppDelegate.swift */; };
 		D4CC151A2C68AAF100AB1326 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC15192C68AAF100AB1326 /* SceneDelegate.swift */; };
 		D4CC151C2C68AAF100AB1326 /* ViewControllerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC151B2C68AAF100AB1326 /* ViewControllerRegister.swift */; };
@@ -27,6 +28,7 @@
 		D406F1362C68CCF50031F0BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D406F1392C68CED80031F0BA /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		D406F13B2C68D0A60031F0BA /* ViewControllerWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWorkouts.swift; sourceTree = "<group>"; };
+		D406F13E2C6902E30031F0BA /* UIViewControllerExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtention.swift; sourceTree = "<group>"; };
 		D4CC15142C68AAF100AB1326 /* GymTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CC15172C68AAF100AB1326 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4CC15192C68AAF100AB1326 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		D406F13D2C6902C00031F0BA /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				D406F13E2C6902E30031F0BA /* UIViewControllerExtention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		D4CC150B2C68AAF100AB1326 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		D4CC15162C68AAF100AB1326 /* GymTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D406F13D2C6902C00031F0BA /* Extentions */,
 				D406F1382C68CE8D0031F0BA /* ViewControllers */,
 				D4CC152B2C68B19B00AB1326 /* Model */,
 				D4CC15172C68AAF100AB1326 /* AppDelegate.swift */,
@@ -200,6 +211,7 @@
 				D4CC15182C68AAF100AB1326 /* AppDelegate.swift in Sources */,
 				D4CC151A2C68AAF100AB1326 /* SceneDelegate.swift in Sources */,
 				D4CC15312C68B2D100AB1326 /* Workout.swift in Sources */,
+				D406F13F2C6902E30031F0BA /* UIViewControllerExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

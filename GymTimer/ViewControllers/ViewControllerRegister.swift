@@ -51,9 +51,7 @@ class ViewControllerRegister: UIViewController {
                         
                         
                         // move to the workouts screen
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "workouts_screen")
-                        self.present(vc, animated: true, completion: nil)
+                        self.moveToWorkouts(storyboard_id: "ViewControllerWorkouts")
                     
                     }
                 })
