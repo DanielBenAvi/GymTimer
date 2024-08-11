@@ -7,10 +7,14 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
+
 
 class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
             
+    @IBOutlet weak var createWorkout_TF_name: UITextField!
     @IBOutlet weak var createWorkout_TBV_exercises: UITableView!
     
     var exercises: [Exercise] = []
@@ -18,12 +22,7 @@ class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        exercises = [
-            Exercise(name: "Exercise 1", numberOfSets: 3, numberOfReps: 10, weight: 50,image: "", breakTime: 60),
-            Exercise(name: "Exercise 2", numberOfSets: 3, numberOfReps: 10, weight: 50,image: "", breakTime: 60),
-        ]
+    
         
         createWorkout_TBV_exercises.delegate = self
         createWorkout_TBV_exercises.dataSource = self
@@ -31,9 +30,17 @@ class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    @IBAction func add_new_exercise(_ sender: Any) {
+    @IBAction func save_workout(_ sender: Any) {
         
-        self.moveToNewScreen(storyboard_id: "ViewControllerAddExercise")
+        let userId = Auth.auth().currentUser!.uid
+    
+        let workout = Workout(name: createWorkout_TF_name.text!)
+        workout.setExercises(exercises: exercises)
+        
+        
+        workout.saveWorkoutToDB(userId: userId)
+        
+        self.dismiss(animated: true, completion: nil)
         
     }
 }
