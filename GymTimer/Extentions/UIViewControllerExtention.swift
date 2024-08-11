@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func moveToWorkouts(storyboard_id: String){
+    func moveToNewScreen(storyboard_id: String){
         let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboard_id)
         newViewController.modalPresentationStyle = .fullScreen // or .overFullScreen
         self.present(newViewController, animated: true)

@@ -5,10 +5,10 @@ class Workout {
     var name: String
     var exercises: [Exercise]
     
-    init(id: String, name: String, exercises: [Exercise]) {
+    init(id: String, name: String) {
         self.id = id
         self.name = name
-        self.exercises = exercises
+        self.exercises = []
     }
     
     func toDictionary() -> [String: Any] {

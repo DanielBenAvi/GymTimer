@@ -29,7 +29,7 @@ class ViewControllerLogin: UIViewController {
             } else {
                 print("User logged in successfully")
                 
-                self.moveToWorkouts(storyboard_id: "ViewControllerWorkouts")
+                self.moveToNewScreen(storyboard_id: "ViewControllerWorkouts")
             }
         }
         

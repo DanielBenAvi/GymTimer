@@ -8,12 +8,41 @@
 import Foundation
 import UIKit
 
-class ViewControllerWorkouts: UIViewController {
+class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
 
+    
+    @IBOutlet weak var workouts_TBV_workoutsList: UITableView!
+    
+    var workouts: [Workout] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // TODO: Load workouts from DB
+        
+        workouts = [
+            Workout(id: "1", name: "Workout 1"),
+            Workout(id: "2", name: "Workout 2"),
+            Workout(id: "3", name: "Workout 3"),
+        ]
+        
+        
+        workouts_TBV_workoutsList.delegate = self
+        workouts_TBV_workoutsList.dataSource = self
+        
+    }
+}
+
+
+extension ViewControllerWorkouts {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return workouts.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomWorkoutsTableViewCell", for: indexPath) as! CustomWorkoutsTableViewCell
+        let object = workouts[indexPath.row]
+        cell.configure(with: object)
+        return cell
+    }
 }

@@ -51,7 +51,7 @@ class ViewControllerRegister: UIViewController {
                         
                         
                         // move to the workouts screen
-                        self.moveToWorkouts(storyboard_id: "ViewControllerWorkouts")
+                        self.moveToNewScreen(storyboard_id: "ViewControllerWorkouts")
                     
                     }
                 })
