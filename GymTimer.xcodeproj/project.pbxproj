@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D406F1312C68BB010031F0BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D406F1302C68BB010031F0BA /* FirebaseAuth */; };
 		D406F1332C68BB330031F0BA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D406F1322C68BB330031F0BA /* FirebaseDatabase */; };
+		D406F1352C68BE180031F0BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D406F1342C68BE180031F0BA /* GoogleService-Info.plist */; };
 		D4CC15182C68AAF100AB1326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC15172C68AAF100AB1326 /* AppDelegate.swift */; };
 		D4CC151A2C68AAF100AB1326 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC15192C68AAF100AB1326 /* SceneDelegate.swift */; };
 		D4CC151C2C68AAF100AB1326 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC151B2C68AAF100AB1326 /* ViewController.swift */; };
@@ -18,10 +19,10 @@
 		D4CC152D2C68B1AA00AB1326 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC152C2C68B1AA00AB1326 /* User.swift */; };
 		D4CC152F2C68B23D00AB1326 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC152E2C68B23D00AB1326 /* Exercise.swift */; };
 		D4CC15312C68B2D100AB1326 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC15302C68B2D100AB1326 /* Workout.swift */; };
-		D4CC15332C68B6E600AB1326 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4CC15322C68B6E600AB1326 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D406F1342C68BE180031F0BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4CC15142C68AAF100AB1326 /* GymTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CC15172C68AAF100AB1326 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4CC15192C68AAF100AB1326 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		D4CC152C2C68B1AA00AB1326 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4CC152E2C68B23D00AB1326 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		D4CC15302C68B2D100AB1326 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		D4CC15322C68B6E600AB1326 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				D4CC151B2C68AAF100AB1326 /* ViewController.swift */,
 				D4CC151D2C68AAF100AB1326 /* Main.storyboard */,
 				D4CC15202C68AAF200AB1326 /* Assets.xcassets */,
-				D4CC15322C68B6E600AB1326 /* GoogleService-Info.plist */,
+				D406F1342C68BE180031F0BA /* GoogleService-Info.plist */,
 				D4CC15222C68AAF200AB1326 /* LaunchScreen.storyboard */,
 				D4CC15252C68AAF200AB1326 /* Info.plist */,
 			);
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4CC15212C68AAF200AB1326 /* Assets.xcassets in Resources */,
-				D4CC15332C68B6E600AB1326 /* GoogleService-Info.plist in Resources */,
+				D406F1352C68BE180031F0BA /* GoogleService-Info.plist in Resources */,
 				D4CC15242C68AAF200AB1326 /* Base in Resources */,
 				D4CC151F2C68AAF100AB1326 /* Base in Resources */,
 			);

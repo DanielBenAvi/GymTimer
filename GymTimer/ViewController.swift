@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -34,6 +35,14 @@ class ViewController: UIViewController {
         let user = User(name: username!, email: email!, password: password!)
         
         // upload the user to firebase
+        Auth.auth().createUser(withEmail: email!, password: password!) {
+            (authResult, error) in
+            if error != nil {
+                print("Error: \(error!.localizedDescription)")
+            } else {
+                print("User created successfully")
+            }
+        }
     }
     
 }
