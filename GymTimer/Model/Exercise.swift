@@ -9,8 +9,8 @@ class Exercise {
     var image: String
     var breakTime: Int // in seconds
     
-    init(id: String, name: String, numberOfSets: Int, numberOfReps: Int, weight: Double, image: String, breakTime: Int) {
-        self.id = id
+    init(name: String, numberOfSets: Int, numberOfReps: Int, weight: Double, image: String, breakTime: Int) {
+        self.id = UUID().uuidString
         self.name = name
         self.numberOfSets = numberOfSets
         self.numberOfReps = numberOfReps

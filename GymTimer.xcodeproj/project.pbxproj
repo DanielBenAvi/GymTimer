@@ -16,6 +16,7 @@
 		D406F1432C6905740031F0BA /* CustomWorkoutsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F1422C6905740031F0BA /* CustomWorkoutsTableViewCell.swift */; };
 		D406F1452C690DC40031F0BA /* ViewControllerCreateWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F1442C690DC40031F0BA /* ViewControllerCreateWorkout.swift */; };
 		D406F1472C6912760031F0BA /* ViewControllerAddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F1462C6912760031F0BA /* ViewControllerAddExercise.swift */; };
+		D406F1492C6916CF0031F0BA /* CostomExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F1482C6916CF0031F0BA /* CostomExercisesTableViewCell.swift */; };
 		D4CC15182C68AAF100AB1326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC15172C68AAF100AB1326 /* AppDelegate.swift */; };
 		D4CC151A2C68AAF100AB1326 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC15192C68AAF100AB1326 /* SceneDelegate.swift */; };
 		D4CC151C2C68AAF100AB1326 /* ViewControllerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC151B2C68AAF100AB1326 /* ViewControllerRegister.swift */; };
@@ -35,6 +36,7 @@
 		D406F1422C6905740031F0BA /* CustomWorkoutsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWorkoutsTableViewCell.swift; sourceTree = "<group>"; };
 		D406F1442C690DC40031F0BA /* ViewControllerCreateWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCreateWorkout.swift; sourceTree = "<group>"; };
 		D406F1462C6912760031F0BA /* ViewControllerAddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAddExercise.swift; sourceTree = "<group>"; };
+		D406F1482C6916CF0031F0BA /* CostomExercisesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostomExercisesTableViewCell.swift; sourceTree = "<group>"; };
 		D4CC15142C68AAF100AB1326 /* GymTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CC15172C68AAF100AB1326 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4CC15192C68AAF100AB1326 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D406F1422C6905740031F0BA /* CustomWorkoutsTableViewCell.swift */,
+				D406F1482C6916CF0031F0BA /* CostomExercisesTableViewCell.swift */,
 			);
 			path = workoutslist;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				D4CC15182C68AAF100AB1326 /* AppDelegate.swift in Sources */,
 				D4CC151A2C68AAF100AB1326 /* SceneDelegate.swift in Sources */,
 				D4CC15312C68B2D100AB1326 /* Workout.swift in Sources */,
+				D406F1492C6916CF0031F0BA /* CostomExercisesTableViewCell.swift in Sources */,
 				D406F13F2C6902E30031F0BA /* UIViewControllerExtention.swift in Sources */,
 				D406F1472C6912760031F0BA /* ViewControllerAddExercise.swift in Sources */,
 				D406F1452C690DC40031F0BA /* ViewControllerCreateWorkout.swift in Sources */,
