@@ -10,4 +10,12 @@ class Workout {
         self.name = name
         self.exercises = exercises
     }
+    
+    func toDictionary() -> [String: Any] {
+        return [
+            "id": self.id,
+            "name": self.name,
+            "exercises": self.exercises.map { $0.toDictionary }
+        ]
+    }
 }

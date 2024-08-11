@@ -19,4 +19,16 @@ class Exercise {
         self.breakTime = breakTime
     }
     
+    func toDictionary() -> [String: Any] {
+        return [
+            "id": self.id,
+            "name": self.name,
+            "numberOfSets": self.numberOfSets,
+            "numberOfReps": self.numberOfReps,
+            "weight": self.weight,
+            "image": self.image,
+            "breakTime": self.breakTime
+        ]
+    }
+    
 }

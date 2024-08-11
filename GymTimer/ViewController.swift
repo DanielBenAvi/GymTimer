@@ -1,12 +1,6 @@
-//
-//  ViewController.swift
-//  GymTimer
-//
-//  Created by דניאל בן אבי on 11/08/2024.
-//
-
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
@@ -31,9 +25,6 @@ class ViewController: UIViewController {
         let password = register_ET_password.text
         
         
-        // Create a new user object
-        let user = User(name: username!, email: email!, password: password!)
-        
         // upload the user to firebase
         Auth.auth().createUser(withEmail: email!, password: password!) {
             (authResult, error) in
@@ -41,6 +32,24 @@ class ViewController: UIViewController {
                 print("Error: \(error!.localizedDescription)")
             } else {
                 print("User created successfully")
+                
+                // create a user object
+                let user = User(id: authResult!.user.uid, name: username!, email: email!, password: password!)
+                
+                
+                // upload the user to the database
+                let ref = Database.database().reference()
+                
+                print(ref)
+                
+                ref.child("users").child(user.id).setValue(user.toDictionary(), withCompletionBlock: {
+                    (error, ref) in
+                    if error != nil {
+                        print("Error: \(error!.localizedDescription)")
+                    } else {
+                        print("User uploaded successfully")
+                    }
+                })
             }
         }
     }

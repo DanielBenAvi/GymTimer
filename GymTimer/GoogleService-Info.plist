@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAGhVNXdN_fpVbY_mXIhLlJyFAzQcyw8yo</string>
+	<string>AIzaSyCT6R-51lYEgJL14n3WbiB1Rzv0PrnRP2c</string>
 	<key>GCM_SENDER_ID</key>
-	<string>142254838158</string>
+	<string>847317042431</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>DBA.GymTimer</string>
 	<key>PROJECT_ID</key>
-	<string>gymtimer-47902</string>
+	<string>gymtimernew</string>
 	<key>STORAGE_BUCKET</key>
-	<string>gymtimer-47902.appspot.com</string>
+	<string>gymtimernew.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:142254838158:ios:bae38e6457a744c2f254df</string>
+	<string>1:847317042431:ios:281bee247e5a54216238ca</string>
 </dict>
 </plist>
