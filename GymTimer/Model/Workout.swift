@@ -5,11 +5,13 @@ class Workout {
     var name: String
     var exercises: [Exercise]
     
-    init(id: String, name: String) {
-        self.id = id
+    init(name: String) {
+        self.id = UUID().uuidString
         self.name = name
         self.exercises = []
     }
+    
+    
     
     func toDictionary() -> [String: Any] {
         return [

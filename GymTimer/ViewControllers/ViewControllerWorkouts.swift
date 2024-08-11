@@ -21,15 +21,20 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
         // TODO: Load workouts from DB
         
         workouts = [
-            Workout(id: "1", name: "Workout 1"),
-            Workout(id: "2", name: "Workout 2"),
-            Workout(id: "3", name: "Workout 3"),
+            Workout(name: "Workout 1"),
+            Workout(name: "Workout 2"),
+            Workout(name: "Workout 3"),
         ]
         
         
         workouts_TBV_workoutsList.delegate = self
         workouts_TBV_workoutsList.dataSource = self
         
+    }
+    
+    
+    @IBAction func create_workout(_ sender: Any) {
+        self.moveToNewScreen(storyboard_id: "ViewControllerCreateWorkout")
     }
 }
 

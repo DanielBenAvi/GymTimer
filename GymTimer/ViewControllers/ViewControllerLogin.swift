@@ -14,7 +14,18 @@ class ViewControllerLogin: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Auth.auth().currentUser != nil {
+            print("User is already logged in")
+            self.moveToNewScreen(storyboard_id: "ViewControllerWorkouts")
+        } else {
+            print("User is not logged in")
+        }
     }
     
     

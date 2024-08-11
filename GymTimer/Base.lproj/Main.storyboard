@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-2"/>
+            <point key="canvasLocation" x="807" y="-677"/>
         </scene>
         <!--View Controller Workouts-->
         <scene sceneID="bdV-IE-qqj">
@@ -85,14 +85,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JUt-Md-8Mn">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU5-l8-sJS">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="40.666666666666664"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2T-d9-jbP">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                        <items>
+                                            <navigationItem title="Workouts" id="S3c-TU-yNL">
+                                                <barButtonItem key="rightBarButtonItem" title="Create" id="zlB-BF-3yW">
+                                                    <connections>
+                                                        <action selector="create_workout:" destination="8EH-t3-pL9" id="KsO-aW-v4Q"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9QR-Tj-Atp">
-                                        <rect key="frame" x="0.0" y="40.666666666666686" width="393" height="718.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="44" width="393" height="715"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomWorkoutsTableViewCell" id="ojg-r0-OzY" customClass="CustomWorkoutsTableViewCell" customModule="GymTimer" customModuleProvider="target">
@@ -140,7 +146,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92h-Ie-wwa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="-274"/>
+            <point key="canvasLocation" x="1529" y="-677"/>
+        </scene>
+        <!--View Controller Create Workout-->
+        <scene sceneID="gVX-MQ-txG">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerCreateWorkout" useStoryboardIdentifierAsRestorationIdentifier="YES" id="igD-GY-J5p" customClass="ViewControllerCreateWorkout" customModule="GymTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H3m-Xi-pUf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nfr-eP-PBL">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcE-ag-3ci">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                        <items>
+                                            <navigationItem title="Create Workout" id="Ksq-Aq-702"/>
+                                        </items>
+                                    </navigationBar>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpi-2P-wOY">
+                                        <rect key="frame" x="0.0" y="44.333333333333329" width="393" height="34.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q5R-Nt-8ms">
+                                        <rect key="frame" x="0.0" y="78.666666666666686" width="393" height="645.66666666666652"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg1-KZ-jSC">
+                                        <rect key="frame" x="0.0" y="724.33333333333337" width="393" height="34.666666666666629"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add New Exercise"/>
+                                        <connections>
+                                            <action selector="add_new_exercise:" destination="igD-GY-J5p" eventType="touchUpInside" id="x8d-S3-dI7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WI1-Kq-GUq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WI1-Kq-GUq" firstAttribute="trailing" secondItem="nfr-eP-PBL" secondAttribute="trailing" id="6F8-r2-fa2"/>
+                            <constraint firstItem="WI1-Kq-GUq" firstAttribute="bottom" secondItem="nfr-eP-PBL" secondAttribute="bottom" id="9zz-CC-Dmi"/>
+                            <constraint firstItem="nfr-eP-PBL" firstAttribute="top" secondItem="WI1-Kq-GUq" secondAttribute="top" id="BDR-Sn-m81"/>
+                            <constraint firstItem="nfr-eP-PBL" firstAttribute="leading" secondItem="WI1-Kq-GUq" secondAttribute="leading" id="sI7-Nh-zk5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cr-DG-T5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2263" y="-677"/>
+        </scene>
+        <!--View Controller Add Exercise-->
+        <scene sceneID="u3C-5J-koZ">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerAddExercise" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Da-Pl-QM5" customClass="ViewControllerAddExercise" customModule="GymTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lib-IW-yek">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BtD-OC-MS6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cha-y1-aT7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3008" y="-677"/>
         </scene>
         <!--View Controller Login-->
         <scene sceneID="QeU-RP-2X3">
