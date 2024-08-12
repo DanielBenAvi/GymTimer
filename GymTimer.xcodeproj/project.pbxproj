@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F6FB3812C69E8CB00A90B03 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FB3802C69E8CB00A90B03 /* AuthManager.swift */; };
 		7F6FB3832C69E8E100A90B03 /* RealTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FB3822C69E8E100A90B03 /* RealTimeManager.swift */; };
+		7F6FB3852C69EEB600A90B03 /* ViewControllerSingleWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FB3842C69EEB600A90B03 /* ViewControllerSingleWorkout.swift */; };
 		D406F1312C68BB010031F0BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D406F1302C68BB010031F0BA /* FirebaseAuth */; };
 		D406F1332C68BB330031F0BA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D406F1322C68BB330031F0BA /* FirebaseDatabase */; };
 		D406F1372C68CCF50031F0BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D406F1362C68CCF50031F0BA /* GoogleService-Info.plist */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		7F6FB3802C69E8CB00A90B03 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		7F6FB3822C69E8E100A90B03 /* RealTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeManager.swift; sourceTree = "<group>"; };
+		7F6FB3842C69EEB600A90B03 /* ViewControllerSingleWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSingleWorkout.swift; sourceTree = "<group>"; };
 		D406F1362C68CCF50031F0BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D406F1392C68CED80031F0BA /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		D406F13B2C68D0A60031F0BA /* ViewControllerWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWorkouts.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				D406F13B2C68D0A60031F0BA /* ViewControllerWorkouts.swift */,
 				D406F1442C690DC40031F0BA /* ViewControllerCreateWorkout.swift */,
 				D406F1462C6912760031F0BA /* ViewControllerAddExercise.swift */,
+				7F6FB3842C69EEB600A90B03 /* ViewControllerSingleWorkout.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				D406F13A2C68CED80031F0BA /* ViewControllerLogin.swift in Sources */,
 				D406F13C2C68D0A60031F0BA /* ViewControllerWorkouts.swift in Sources */,
 				D4CC15182C68AAF100AB1326 /* AppDelegate.swift in Sources */,
+				7F6FB3852C69EEB600A90B03 /* ViewControllerSingleWorkout.swift in Sources */,
 				D4CC151A2C68AAF100AB1326 /* SceneDelegate.swift in Sources */,
 				D4CC15312C68B2D100AB1326 /* Workout.swift in Sources */,
 				7F6FB3832C69E8E100A90B03 /* RealTimeManager.swift in Sources */,

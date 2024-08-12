@@ -148,6 +148,43 @@
             </objects>
             <point key="canvasLocation" x="1529" y="-677"/>
         </scene>
+        <!--View Controller Single Workout-->
+        <scene sceneID="hfe-uW-Mzq">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerSingleWorkout" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tuh-E9-XZ4" customClass="ViewControllerSingleWorkout" customModule="GymTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6kx-nd-XM2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3dz-CJ-9rH">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFt-6y-qfO">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <items>
+                                            <navigationItem title="Name" id="0qB-3U-fAe"/>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nyw-Gm-LUj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3dz-CJ-9rH" firstAttribute="leading" secondItem="Nyw-Gm-LUj" secondAttribute="leading" id="11v-2X-BWp"/>
+                            <constraint firstItem="3dz-CJ-9rH" firstAttribute="top" secondItem="Nyw-Gm-LUj" secondAttribute="top" id="ADm-jI-1H1"/>
+                            <constraint firstItem="Nyw-Gm-LUj" firstAttribute="bottom" secondItem="3dz-CJ-9rH" secondAttribute="bottom" id="TpA-u8-TRa"/>
+                            <constraint firstItem="Nyw-Gm-LUj" firstAttribute="trailing" secondItem="3dz-CJ-9rH" secondAttribute="trailing" id="rYT-lQ-ewu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="workout_LBL_name" destination="0qB-3U-fAe" id="gCD-sj-d4q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aB1-3h-LpH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527" y="39"/>
+        </scene>
         <!--View Controller Create Workout-->
         <scene sceneID="gVX-MQ-txG">
             <objects>
@@ -254,7 +291,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoC-q7-Ro0">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="140.33333333333334"/>
                                         <items>
                                             <navigationItem title="Add New Exercise" id="W0x-mW-hOa" userLabel="Add New Exercise">
                                                 <barButtonItem key="rightBarButtonItem" title="Add" id="Uz9-ni-YsA" userLabel="Add">

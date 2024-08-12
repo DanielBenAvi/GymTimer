@@ -10,8 +10,6 @@ import UIKit
 
 class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
-
-    
     @IBOutlet weak var workouts_TBV_workoutsList: UITableView!
     
     var workouts: [Workout] = []
@@ -21,12 +19,6 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
         // TODO: Load workouts from DB
         
         let userId = AuthManager.shared.getCurrentUserId()
-        
-//        workouts = [
-//            Workout(name: "Workout 1"),
-//            Workout(name: "Workout 2"),
-//            Workout(name: "Workout 3"),
-//        ]
         
         workouts_TBV_workoutsList.delegate = self
         workouts_TBV_workoutsList.dataSource = self
@@ -55,5 +47,17 @@ extension ViewControllerWorkouts {
         let object = workouts[indexPath.row]
         cell.configure(with: object)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let workout = workouts[indexPath.row]
+        onClickCell(workout: workout)
+    }
+    
+    func onClickCell(workout: Workout) {
+        let vc = storyboard?.instantiateViewController(identifier: "ViewControllerSingleWorkout") as! ViewControllerSingleWorkout
+        vc.workout = workout
+        vc.modalPresentationStyle = .fullScreen // or .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
