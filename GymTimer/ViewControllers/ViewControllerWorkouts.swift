@@ -20,15 +20,21 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
         super.viewDidLoad()
         // TODO: Load workouts from DB
         
-        workouts = [
-            Workout(name: "Workout 1"),
-            Workout(name: "Workout 2"),
-            Workout(name: "Workout 3"),
-        ]
+        let userId = AuthManager.shared.getCurrentUserId()
         
+//        workouts = [
+//            Workout(name: "Workout 1"),
+//            Workout(name: "Workout 2"),
+//            Workout(name: "Workout 3"),
+//        ]
         
         workouts_TBV_workoutsList.delegate = self
         workouts_TBV_workoutsList.dataSource = self
+        
+        Task {
+            workouts = await RealTimeManager.shared.getWorkoutsFromDB(userId: userId)
+            workouts_TBV_workoutsList.reloadData()
+        }
         
     }
     

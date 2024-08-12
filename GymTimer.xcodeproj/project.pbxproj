@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F6FB3812C69E8CB00A90B03 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FB3802C69E8CB00A90B03 /* AuthManager.swift */; };
+		7F6FB3832C69E8E100A90B03 /* RealTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FB3822C69E8E100A90B03 /* RealTimeManager.swift */; };
 		D406F1312C68BB010031F0BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D406F1302C68BB010031F0BA /* FirebaseAuth */; };
 		D406F1332C68BB330031F0BA /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D406F1322C68BB330031F0BA /* FirebaseDatabase */; };
 		D406F1372C68CCF50031F0BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D406F1362C68CCF50031F0BA /* GoogleService-Info.plist */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F6FB3802C69E8CB00A90B03 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7F6FB3822C69E8E100A90B03 /* RealTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeManager.swift; sourceTree = "<group>"; };
 		D406F1362C68CCF50031F0BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D406F1392C68CED80031F0BA /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		D406F13B2C68D0A60031F0BA /* ViewControllerWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWorkouts.swift; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F6FB37F2C69E8A600A90B03 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7F6FB3802C69E8CB00A90B03 /* AuthManager.swift */,
+				7F6FB3822C69E8E100A90B03 /* RealTimeManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		D406F1382C68CE8D0031F0BA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +133,7 @@
 		D4CC15162C68AAF100AB1326 /* GymTimer */ = {
 			isa = PBXGroup;
 			children = (
+				7F6FB37F2C69E8A600A90B03 /* Data */,
 				D406F1402C6905450031F0BA /* Lists */,
 				D406F13D2C6902C00031F0BA /* Extentions */,
 				D406F1382C68CE8D0031F0BA /* ViewControllers */,
@@ -232,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4CC152F2C68B23D00AB1326 /* Exercise.swift in Sources */,
+				7F6FB3812C69E8CB00A90B03 /* AuthManager.swift in Sources */,
 				D4CC152D2C68B1AA00AB1326 /* User.swift in Sources */,
 				D406F1432C6905740031F0BA /* CustomWorkoutsTableViewCell.swift in Sources */,
 				D4CC151C2C68AAF100AB1326 /* ViewControllerRegister.swift in Sources */,
@@ -240,6 +255,7 @@
 				D4CC15182C68AAF100AB1326 /* AppDelegate.swift in Sources */,
 				D4CC151A2C68AAF100AB1326 /* SceneDelegate.swift in Sources */,
 				D4CC15312C68B2D100AB1326 /* Workout.swift in Sources */,
+				7F6FB3832C69E8E100A90B03 /* RealTimeManager.swift in Sources */,
 				D406F1492C6916CF0031F0BA /* CostomExercisesTableViewCell.swift in Sources */,
 				D406F13F2C6902E30031F0BA /* UIViewControllerExtention.swift in Sources */,
 				D406F1472C6912760031F0BA /* ViewControllerAddExercise.swift in Sources */,

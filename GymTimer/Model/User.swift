@@ -1,4 +1,5 @@
 import Foundation
+import FirebaseDatabase
 
 class User {
     var id: String
@@ -32,7 +33,20 @@ class User {
             "workouts": self.workouts.map { $0.toDictionary() }
         ]
     }
-
+    
+    func getUserFromDB(userId: String) async {
+        do {
+            let ref = Database.database().reference()
+            let snapshot = try await ref.child("users").child(userId).getData()
+            
+            let user = snapshot.value as! [String: Any]
+            
+            print("\(user)")
+            
+        } catch {
+            print("Error getting user from DB")
+        }
+    }
     
 }
 

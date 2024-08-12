@@ -40,4 +40,6 @@ class Workout {
         ref.child("users").child(userId).child("workouts").child(self.id).setValue(self.toDictionary())
     }
     
+    
+    
 }
