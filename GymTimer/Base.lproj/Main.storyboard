@@ -160,11 +160,42 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFt-6y-qfO">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                         <items>
                                             <navigationItem title="Name" id="0qB-3U-fAe"/>
                                         </items>
                                     </navigationBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-La-58y">
+                                        <rect key="frame" x="0.0" y="44" width="393" height="715"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomExerciseInViewWorkoutCell" id="gFl-5N-4cK" customClass="CustomExerciseInViewWorkoutCell" customModule="GymTimer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="393" height="20.666666030883789"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gFl-5N-4cK" id="yJp-Sh-Abw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="20.666666030883789"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2N-jF-xku">
+                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="A2N-jF-xku" secondAttribute="bottom" id="3ff-tI-Ak2"/>
+                                                        <constraint firstItem="A2N-jF-xku" firstAttribute="top" secondItem="yJp-Sh-Abw" secondAttribute="top" id="5SC-uh-7bb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="A2N-jF-xku" secondAttribute="trailing" id="9Ss-dg-HmE"/>
+                                                        <constraint firstItem="A2N-jF-xku" firstAttribute="leading" secondItem="yJp-Sh-Abw" secondAttribute="leading" id="KLO-5Y-Whj"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="titleLabel" destination="A2N-jF-xku" id="Sa3-1Z-Fi7"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -179,6 +210,7 @@
                     </view>
                     <connections>
                         <outlet property="workout_LBL_name" destination="0qB-3U-fAe" id="gCD-sj-d4q"/>
+                        <outlet property="workout_TBV_data" destination="0MD-La-58y" id="vWU-go-xXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aB1-3h-LpH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

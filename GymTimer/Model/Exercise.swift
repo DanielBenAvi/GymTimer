@@ -19,6 +19,16 @@ class Exercise {
         self.breakTime = breakTime
     }
     
+    init(id: String, name: String, numberOfSets: Int, numberOfReps: Int, weight: Double, image: String, breakTime: Int) {
+        self.id = id
+        self.name = name
+        self.numberOfSets = numberOfSets
+        self.numberOfReps = numberOfReps
+        self.weight = weight
+        self.image = image
+        self.breakTime = breakTime
+    }
+    
     func toDictionary() -> [String: Any] {
         return [
             "id": self.id,

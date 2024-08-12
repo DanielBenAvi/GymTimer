@@ -45,18 +45,47 @@ class RealTimeManager {
     
     func getWorkoutsFromDB(userId: String) async -> [Workout] {
         do {
-            let snapshot = try await self.getUserRef(userId: userId).child("workouts").getData()
-            
-            let workouts = snapshot.value as! [String: Any]
-            
-            return workouts.map { (key, value) in
-                let workout = value as! [String: Any]
-                return Workout(name: workout["name"] as! String)
+            let ref = self.getUserRef(userId: userId).child("workouts")
+            let snapshot = try await ref.getData()
+            guard let value = snapshot.value as? [String: Any] else {
+                return []
             }
+            
+            var workoutssss: [Workout] = []
+            
+            for (_, value) in value {
+                guard let workout = value as? [String: Any] else {
+                    continue
+                }
+                let id = workout["id"] as! String
+                let name = workout["name"] as! String
+                var exercises: [Exercise] = []
+                
+                for exercise in workout["exercises"] as! [[String: Any]] {
+                    let id = exercise["id"] as! String
+                    let name = exercise["name"] as! String
+                    let numberOfSets = exercise["numberOfSets"] as! Int
+                    let numberOfReps = exercise["numberOfReps"] as! Int
+                    let weight = exercise["weight"] as! Double
+                    let image = exercise["image"] as! String
+                    let breakTime = exercise["breakTime"] as! Int
+                    
+                    let exercise = Exercise(id: id, name: name, numberOfSets: numberOfSets, numberOfReps: numberOfReps, weight: weight, image: image, breakTime: breakTime)
+                    exercises.append(exercise)
+                }
+                
+                let newWorkout = Workout(name: name)
+                newWorkout.id = id
+                newWorkout.exercises = exercises
+                workoutssss.append(newWorkout)
+            }
+            return workoutssss
             
         } catch {
             print("Error getting workouts from DB")
             return []
         }
     }
+    
+    
 }

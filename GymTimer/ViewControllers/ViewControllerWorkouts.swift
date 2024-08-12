@@ -24,7 +24,13 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
         workouts_TBV_workoutsList.dataSource = self
         
         Task {
-            workouts = await RealTimeManager.shared.getWorkoutsFromDB(userId: userId)
+            
+            let fromDB = await RealTimeManager.shared.getWorkoutsFromDB(userId: userId)
+            
+            for workout in fromDB {
+                workouts.append(workout)
+            }
+            
             workouts_TBV_workoutsList.reloadData()
         }
         

@@ -42,6 +42,8 @@ class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITabl
         
         self.dismiss(animated: true, completion: nil)
         
+        // TODO - move the new workout to the workouts list
+        
     }
 }
 
