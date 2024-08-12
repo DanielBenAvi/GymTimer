@@ -40,6 +40,12 @@ class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITabl
         
         workout.saveWorkoutToDB(userId: userId)
         
+        // move data to the previous view controller
+        let previousVC = self.presentingViewController as! ViewControllerWorkouts
+        previousVC.workouts.append(workout)
+        previousVC.workouts_TBV_workoutsList.reloadData()
+        
+        // return to the previous view controller
         self.dismiss(animated: true, completion: nil)
         
         // TODO - move the new workout to the workouts list
