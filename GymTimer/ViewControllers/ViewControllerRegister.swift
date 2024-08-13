@@ -3,8 +3,6 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ViewControllerRegister: UIViewController {
-
-    @IBOutlet weak var register_LBL_title: UILabel!
     
     @IBOutlet weak var register_ET_email: UITextField!
     

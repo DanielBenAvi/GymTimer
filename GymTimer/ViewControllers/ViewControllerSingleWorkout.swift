@@ -1,10 +1,3 @@
-//
-//  ViewControllerSingleWorkout.swift
-//  GymTimer
-//
-//  Created by Yaniv Ben David on 12/08/2024.
-//
-
 import Foundation
 import UIKit
 

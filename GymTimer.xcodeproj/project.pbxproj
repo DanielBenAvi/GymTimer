@@ -111,6 +111,13 @@
 			path = Lists;
 			sourceTree = "<group>";
 		};
+		D48E9D0F2C6B6B8A00150113 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		D4CC150B2C68AAF100AB1326 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +138,7 @@
 		D4CC15162C68AAF100AB1326 /* GymTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D48E9D0F2C6B6B8A00150113 /* ViewComponents */,
 				7F6FB37F2C69E8A600A90B03 /* Data */,
 				D406F1402C6905450031F0BA /* Lists */,
 				D406F13D2C6902C00031F0BA /* Extentions */,

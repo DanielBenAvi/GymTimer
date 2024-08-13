@@ -1,10 +1,3 @@
-//
-//  ViewControllerWorkouts.swift
-//  GymTimer
-//
-//  Created by דניאל בן אבי on 11/08/2024.
-//
-
 import Foundation
 import UIKit
 
@@ -16,7 +9,6 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Load workouts from DB
         
         let userId = AuthManager.shared.getCurrentUserId()
         
@@ -36,14 +28,20 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
         
     }
     
-    
     @IBAction func create_workout(_ sender: Any) {
         self.moveToNewScreen(storyboard_id: "ViewControllerCreateWorkout")
     }
+    
+    func preformSegue(identifier: String) {
+        self.performSegue(withIdentifier: identifier, sender: self)
+    }
+    
+     
 }
 
 
 extension ViewControllerWorkouts {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return workouts.count
     }
@@ -66,4 +64,14 @@ extension ViewControllerWorkouts {
         vc.modalPresentationStyle = .fullScreen // or .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
+    
+    // Set the height of the cell
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+
+    
+
+    
 }

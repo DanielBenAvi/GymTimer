@@ -15,6 +15,8 @@ class CostomExercisesTableViewCell : UITableViewCell {
     func configure(with object: Exercise) {
         titleLabel.text = object.name
     }
+    
+
 
 }
 

@@ -18,24 +18,4 @@ class AuthManager {
     func getCurrentUserId() -> String {
         return Auth.auth().currentUser!.uid
     }
-    
-//    func signUp(email: String, password: String, completion: @escaping (Bool) -> Void) {
-//        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//            if error == nil {
-//                completion(true)
-//            } else {
-//                completion(false)
-//            }
-//        }
-//    }
-//    
-//    func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {
-//        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-//            if error == nil {
-//                completion(true)
-//            } else {
-//                completion(false)
-//            }
-//        }
-//    }
 }
