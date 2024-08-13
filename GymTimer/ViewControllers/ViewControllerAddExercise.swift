@@ -24,7 +24,9 @@ class ViewControllerAddExercise : UIViewController {
     @IBOutlet weak var addExercise_LBL_break: UILabel!
     @IBOutlet weak var addExercise_STP_break: UIStepper!
 
+    @IBOutlet weak var collectionVIew: UICollectionView!
     
+    var selectedIcon: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,10 @@ class ViewControllerAddExercise : UIViewController {
         updateReps()
         updateWeight()
         updateBreak()
+        
+        collectionVIew.dataSource = self
+        collectionVIew.delegate = self
+
     }
     
     
@@ -68,7 +74,7 @@ class ViewControllerAddExercise : UIViewController {
             numberOfSets: Int(addExercise_STP_sets.value),
             numberOfReps: Int(addExercise_STP_reps.value),
             weight: Double(addExercise_STP_weight.value),
-            image: "", // TOOD: add image
+            image: selectedIcon,
             breakTime: Int(addExercise_STP_break.value)
         )
         
@@ -101,3 +107,50 @@ extension ViewControllerAddExercise {
         addExercise_LBL_break.text = "Break: \(Int(addExercise_STP_break.value)) sec"
     }
 }
+
+
+extension ViewControllerAddExercise : UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+      }
+      
+      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 42
+      }
+      
+      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCollectionViewCell
+        cell.setIcon(iconName: "icon\(indexPath.row + 1)")
+        
+        return cell
+      }
+    
+    // UICollectionViewDelegate method to handle the tap on a cell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // uncolor all the cells
+        for cell in collectionView.visibleCells {
+            cell.backgroundColor = UIColor.clear
+        }
+        
+        
+        // color the selected cell
+        let cell = collectionView.cellForItem(at: indexPath) as! MyCollectionViewCell
+        cell.backgroundColor = UIColor(named: "MyPrimary")
+        
+        // set the selected icon
+        selectedIcon = "icon\(indexPath.row + 1)"
+        print(selectedIcon)
+    }
+}
+
+class MyCollectionViewCell: UICollectionViewCell {
+      
+    @IBOutlet weak var icon: UIImageView!
+    
+    func setIcon(iconName: String) {
+        icon.image = UIImage(named: iconName)
+    }
+    
+}
+

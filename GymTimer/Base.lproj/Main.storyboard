@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -123,14 +124,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomWorkoutsTableViewCell" id="ojg-r0-OzY" customClass="CustomWorkoutsTableViewCell" customModule="GymTimer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="382" height="37"/>
+                                        <rect key="frame" x="0.0" y="50" width="382" height="37.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ojg-r0-OzY" id="0kY-zP-aCE" customClass="UILabel">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="37.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCg-zz-xU2">
-                                                    <rect key="frame" x="8" y="8" width="366" height="21"/>
+                                                    <rect key="frame" x="8" y="8.0000000000000018" width="366" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -192,14 +193,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomExerciseInViewWorkoutCell" id="gFl-5N-4cK" customClass="CustomExerciseInViewWorkoutCell" customModule="GymTimer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="382" height="37"/>
+                                        <rect key="frame" x="0.0" y="50" width="382" height="37.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gFl-5N-4cK" id="yJp-Sh-Abw">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="37.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2N-jF-xku">
-                                                    <rect key="frame" x="8" y="8" width="366" height="21"/>
+                                                    <rect key="frame" x="8" y="8.0000000000000018" width="366" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -461,11 +462,49 @@
                                     <action selector="unwindToPreviousViewControllerWithSegue:" destination="4Da-Pl-QM5" eventType="touchUpInside" id="Dqr-sc-BHC"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-wv-zSd">
+                                <rect key="frame" x="16" y="376" width="382" height="278"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GtL-BL-zsL">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ejv-RM-oH2" customClass="MyCollectionViewCell" customModule="GymTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="DFW-bR-eBE">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WzO-c4-ikD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WzO-c4-ikD" firstAttribute="top" secondItem="DFW-bR-eBE" secondAttribute="top" id="JrP-xq-4r9"/>
+                                                <constraint firstAttribute="bottom" secondItem="WzO-c4-ikD" secondAttribute="bottom" id="WUS-Kf-jo5"/>
+                                                <constraint firstAttribute="trailing" secondItem="WzO-c4-ikD" secondAttribute="trailing" id="ZJx-e7-4fM"/>
+                                                <constraint firstItem="WzO-c4-ikD" firstAttribute="leading" secondItem="DFW-bR-eBE" secondAttribute="leading" id="eIt-Eb-tQZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="icon" destination="WzO-c4-ikD" id="2Rd-ov-loQ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Da-Pl-QM5" id="BYN-Wf-vTt"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BtD-OC-MS6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="BaM-kq-hq7" secondAttribute="trailing" constant="16" id="0hp-J5-Ewq"/>
+                            <constraint firstItem="fZU-wv-zSd" firstAttribute="top" secondItem="F6w-7g-gad" secondAttribute="bottom" constant="16" id="A4T-e2-FBG"/>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="4oK-aZ-gxt" secondAttribute="trailing" constant="16" id="C77-vu-h63"/>
                             <constraint firstItem="Q13-mV-cGF" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="FUW-vy-gPl"/>
                             <constraint firstItem="F6w-7g-gad" firstAttribute="top" secondItem="4oK-aZ-gxt" secondAttribute="bottom" constant="8" id="Ghn-ig-g3o"/>
@@ -474,6 +513,8 @@
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="zNZ-nY-Mwi" secondAttribute="trailing" constant="16" id="JYL-yH-wXQ"/>
                             <constraint firstItem="4oK-aZ-gxt" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="NSX-Zc-fpg"/>
                             <constraint firstItem="KoC-q7-Ro0" firstAttribute="top" secondItem="BtD-OC-MS6" secondAttribute="top" id="OI1-Vy-ker"/>
+                            <constraint firstItem="zNZ-nY-Mwi" firstAttribute="top" secondItem="fZU-wv-zSd" secondAttribute="bottom" constant="16" id="Oyt-gv-sdE"/>
+                            <constraint firstItem="fZU-wv-zSd" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="PiL-YB-BS5"/>
                             <constraint firstItem="4oK-aZ-gxt" firstAttribute="top" secondItem="252-TQ-mFi" secondAttribute="bottom" constant="8" id="TIS-FZ-bbp"/>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="Q13-mV-cGF" secondAttribute="trailing" constant="16" id="UWb-FZ-bHc"/>
                             <constraint firstItem="KoC-q7-Ro0" firstAttribute="trailing" secondItem="BtD-OC-MS6" secondAttribute="trailing" id="UWs-oM-zPk"/>
@@ -486,6 +527,7 @@
                             <constraint firstItem="zNZ-nY-Mwi" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="drs-N5-vMl"/>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="252-TQ-mFi" secondAttribute="trailing" constant="16" id="g7z-Su-8xE"/>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="F6w-7g-gad" secondAttribute="trailing" constant="16" id="kuk-JZ-4Dv"/>
+                            <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="fZU-wv-zSd" secondAttribute="trailing" constant="16" id="sl5-Vq-KHw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -498,6 +540,7 @@
                         <outlet property="addExercise_STP_sets" destination="j3l-ey-xGI" id="2tD-eo-MKm"/>
                         <outlet property="addExercise_STP_weight" destination="hbi-pT-eTw" id="nNz-oC-pyP"/>
                         <outlet property="addExercise_TF_name" destination="Q13-mV-cGF" id="kOA-lU-x1T"/>
+                        <outlet property="collectionVIew" destination="fZU-wv-zSd" id="bmW-n8-0iR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cha-y1-aT7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

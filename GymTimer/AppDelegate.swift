@@ -13,21 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let accentColor = "MyAccent"
     let textColor = "MyText"
     let primaryColor = "MyPrimary"
+    let secondaryColor = "MySecondary"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
         // Navigation bar appearance
-        UINavigationBar.appearance().barTintColor = UIColor(named: accentColor)
-        UINavigationBar.appearance().tintColor = UIColor(named: textColor)
+        UINavigationBar.appearance().tintColor = UIColor(named: secondaryColor)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: secondaryColor)!]
         
         
         // Button appearance
-        UIButton.appearance().tintColor = UIColor(named: primaryColor)
+        UIButton.appearance().tintColor = UIColor(named: secondaryColor)
         
         
         // Textfield appearance
-        UITextField.appearance().tintColor = UIColor(named: accentColor)
+        UITextField.appearance().tintColor = UIColor(named: secondaryColor)
         
         
         
