@@ -19,12 +19,17 @@ class ViewControllerLogin: UIViewController {
 
     }
     
+    @IBAction func moveToRegister(_ sender: Any) {
+        let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerRegister")
+        self.present(newViewController, animated: false, completion: nil)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if Auth.auth().currentUser != nil {
             print("User is already logged in")
-            self.moveToNewScreen(storyboard_id: "ViewControllerWorkouts")
+            self.moveToNewScreen(storyboard_id: "ViewControllerWorkouts", fullScreen: true)
         } else {
             print("User is not logged in")
         }

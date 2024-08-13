@@ -10,13 +10,32 @@ import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    let accentColor = "MyAccent"
+    let textColor = "MyText"
+    let primaryColor = "MyPrimary"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
+        // Navigation bar appearance
+        UINavigationBar.appearance().barTintColor = UIColor(named: accentColor)
+        UINavigationBar.appearance().tintColor = UIColor(named: textColor)
+        
+        
+        // Button appearance
+        UIButton.appearance().tintColor = UIColor(named: primaryColor)
+        
+        
+        // Textfield appearance
+        UITextField.appearance().tintColor = UIColor(named: accentColor)
+        
+        
+        
         return true
     }
+    
+    
+    
 
     // MARK: UISceneSession Lifecycle
 

@@ -29,27 +29,33 @@ class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+    @IBAction func addExercise(_ sender: Any) {
+
+        
+        
+        
+        let vc = storyboard?.instantiateViewController(identifier: "ViewControllerAddExercise") as! ViewControllerAddExercise
+        self.present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func save_workout(_ sender: Any) {
+        if Valudation.shared.isEmpty(text: createWorkout_TF_name.text!) {
+            addAlert(title: "Error", message: "Name is empty")
+            return
+        }
+        
         
         let userId = Auth.auth().currentUser!.uid
-    
         let workout = Workout(name: createWorkout_TF_name.text!)
+        
         workout.setExercises(exercises: exercises)
-        
-        
         workout.saveWorkoutToDB(userId: userId)
         
-        // move data to the previous view controller
         let previousVC = self.presentingViewController as! ViewControllerWorkouts
         previousVC.workouts.append(workout)
         previousVC.workouts_TBV_workoutsList.reloadData()
         
-        // return to the previous view controller
         self.dismiss(animated: true, completion: nil)
-        
-        // TODO - move the new workout to the workouts list
-        
     }
 }
 

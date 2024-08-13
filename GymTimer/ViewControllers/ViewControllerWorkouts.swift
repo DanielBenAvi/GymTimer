@@ -29,7 +29,9 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
     }
     
     @IBAction func create_workout(_ sender: Any) {
-        self.moveToNewScreen(storyboard_id: "ViewControllerCreateWorkout")
+        let vc = storyboard?.instantiateViewController(identifier: "ViewControllerCreateWorkout") as! ViewControllerCreateWorkout
+        self.present(vc, animated: true, completion: nil)
+        
     }
     
     func preformSegue(identifier: String) {
@@ -64,14 +66,5 @@ extension ViewControllerWorkouts {
         vc.modalPresentationStyle = .fullScreen // or .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
-    
-    // Set the height of the cell
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
 
-    
-
-    
 }

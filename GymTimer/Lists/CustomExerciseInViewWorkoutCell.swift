@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CustomExerciseInViewWorkoutCell : UITableViewCell {
+class CustomExerciseInViewWorkoutCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     

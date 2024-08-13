@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CostomExercisesTableViewCell : UITableViewCell {
+class CostomExercisesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
