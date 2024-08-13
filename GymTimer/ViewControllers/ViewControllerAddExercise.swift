@@ -19,18 +19,19 @@ class ViewControllerAddExercise : UIViewController {
     @IBOutlet weak var addExercise_STP_reps: UIStepper!
     
     @IBOutlet weak var addExercise_LBL_weight: UILabel!
-    @IBOutlet weak var addExercise_SLD_weight: UISlider!
+    @IBOutlet weak var addExercise_STP_weight: UIStepper!
     
     @IBOutlet weak var addExercise_LBL_break: UILabel!
-    @IBOutlet weak var addExercise_SLD_break: UISlider!
+    @IBOutlet weak var addExercise_STP_break: UIStepper!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addExercise_LBL_sets.text = "Sets: \(Int(addExercise_STP_sets.value))"
         addExercise_LBL_reps.text = "Reps: \(Int(addExercise_STP_reps.value))"
-        addExercise_LBL_weight.text = "Weight: \(Int(addExercise_SLD_weight.value))"
-        addExercise_LBL_break.text = "Break: \(Int(addExercise_SLD_break.value))"
+        addExercise_LBL_weight.text = "Weight: \(Int(addExercise_STP_weight.value)) kg"
+        addExercise_LBL_break.text = "Break: \(Int(addExercise_STP_break.value)) sec"
     }
     
     
@@ -45,13 +46,13 @@ class ViewControllerAddExercise : UIViewController {
     }
     
     
-    @IBAction func slider_weight_change(_ sender: Any) {
-        addExercise_LBL_weight.text = "Weight: \(Int(addExercise_SLD_weight.value))"
+    @IBAction func stepper_weight_change(_ sender: Any) {
+        addExercise_LBL_weight.text = "Weight: \(Double(addExercise_STP_weight.value)) kg"
     }
     
     
-    @IBAction func slider_break_change(_ sender: Any) {
-        addExercise_LBL_break.text = "Break: \(Int(addExercise_SLD_break.value))"
+    @IBAction func stepper_break_change(_ sender: Any) {
+        addExercise_LBL_break.text = "Break: \(Int(addExercise_STP_break.value)) sec"
     }
     
     
@@ -60,8 +61,8 @@ class ViewControllerAddExercise : UIViewController {
             name: addExercise_TF_name.text!,
             numberOfSets: Int(addExercise_STP_sets.value),
             numberOfReps: Int(addExercise_STP_reps.value),
-            weight: Double(addExercise_SLD_weight.value),
-            image: "", breakTime: Int(addExercise_SLD_break.value)
+            weight: Double(addExercise_STP_weight.value),
+            image: "", breakTime: Int(addExercise_STP_break.value)
         )
         
         print(exercise.toDictionary())
@@ -80,7 +81,7 @@ class ViewControllerAddExercise : UIViewController {
             return
         }
         
-        if addExercise_SLD_weight.value == 0 {
+        if addExercise_STP_weight.value == 0 {
             return
         }
     
