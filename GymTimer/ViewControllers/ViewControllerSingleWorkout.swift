@@ -28,6 +28,11 @@ class ViewControllerSingleWorkout: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exercises.count
     }

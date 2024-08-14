@@ -27,7 +27,7 @@ class ViewControllerLogin: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if Auth.auth().currentUser != nil {
+        if AuthManager.shared.isLoggedIn() {
             print("User is already logged in")
             self.moveToNewScreen(storyboard_id: "ViewControllerWorkouts", fullScreen: true)
         } else {
@@ -46,8 +46,7 @@ class ViewControllerLogin: UIViewController {
                 print("Error: \(error!.localizedDescription)")
             } else {
                 print("User logged in successfully")
-                
-                self.moveToNewScreen(storyboard_id: "ViewControllerWorkouts")
+                self.moveToNewScreen(storyboard_id: "ViewControllerWorkouts", fullScreen: true)
             }
         }
         

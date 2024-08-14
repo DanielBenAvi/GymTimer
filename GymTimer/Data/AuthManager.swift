@@ -18,4 +18,20 @@ class AuthManager {
     func getCurrentUserId() -> String {
         return Auth.auth().currentUser!.uid
     }
+    
+    func isLoggedIn() -> Bool {
+        if Auth.auth().currentUser != nil {
+            return true
+        }
+        return false
+    }
+    
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Error signing out")
+        }
+    }
 }

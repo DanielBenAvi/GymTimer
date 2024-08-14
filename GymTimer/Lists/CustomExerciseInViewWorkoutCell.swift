@@ -23,6 +23,8 @@ class CustomExerciseInViewWorkoutCell: UITableViewCell {
         titleLabel.text = object.name
         if object.image != "" {
             icon.image = UIImage(named: object.image)
+        } else {
+            icon.image = UIImage(named: "icon42")
         }
         numberOfSets.text = "Sets: \(object.numberOfSets)"
         numberOfReps.text = "Reps: \(object.numberOfReps)"
@@ -42,7 +44,7 @@ class CustomExerciseInViewWorkoutCell: UITableViewCell {
         
         
         // cell height
-        self.frame.size.height = 120
+        self.frame.size.height = 100
     }
 
 }
