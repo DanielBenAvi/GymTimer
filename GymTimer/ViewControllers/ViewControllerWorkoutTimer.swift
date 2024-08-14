@@ -48,7 +48,7 @@ class ViewControllerWorkoutTimer: UIViewController {
             
             activeTimer = true
             inActiveExercise = false
-            endButton.isEnabled = false
+            startButton.isEnabled = false
             
             let cell = TableViewTimerExercises.cellForRow(at: IndexPath(row: currentExercise, section: 0)) as! CustomExerciseInTimerCell
             cell.updateProgress(progress: Float(ex.completed) / Float(ex.exercise.numberOfSets))
@@ -60,7 +60,7 @@ class ViewControllerWorkoutTimer: UIViewController {
         // start exercise
         if !inActiveExercise && !activeTimer{
             inActiveExercise = true
-            startButton.isEnabled = false
+            endButton.isEnabled = false
             startButton.setTitle("End Exercise", for: .normal)
         }
     }
