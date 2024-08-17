@@ -15,6 +15,8 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
     
     var imageLink: String = ""
     
+    var user: User!
+    
     override func viewDidLoad() {
             super.viewDidLoad()
             
@@ -30,8 +32,11 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
                         return
                     }
                     
-                    print("User from DB: \(String(describing: userFromDB.toDictionary()))")
-                    imageLink = userFromDB.image
+                    user = userFromDB
+                    
+                    print("User from DB: \(String(describing: user.toDictionary()))")
+                    
+                    imageLink = user.image
                     
                     print("Image link: \(imageLink)")
                     
@@ -70,6 +75,7 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }
         } catch {
+            self.showAlert(title: "Error", message: "Error downloading image.")
             print("Error downloading image: \(error)")
             // Keep the default "profile" image
         }
@@ -108,6 +114,7 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
                 print("Error uploading image: \(error.localizedDescription)")
             } else {
                 print("Image uploaded successfully")
+                self.imageLink = imageName
                 // Here you can save the download URL if needed
                 imageRef.downloadURL { (url, error) in
                     if let downloadURL = url {
@@ -144,21 +151,34 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    @IBAction func loadImageFromFirebase(_ sender: Any) {
-        loadImage { [weak self] image in
-            guard let self = self else { return }
+    
+    @IBAction func updateUser(_ sender: Any) {
+        print("Updating user")
+        
+        let userId = user.id
             
-            DispatchQueue.main.async {
-                if let image = image {
-                    self.imageView.image = image
-                } else {
-                    // The error alert is already shown in the loadImageFromFirebase function
-                    print("Failed to load image")
+            // Update the user object with the new image name
+            user.image = imageLink
+            
+            // Convert user object to dictionary
+            let userDict = user.toDictionary()
+        
+        print("User dictionary: \(userDict)")
+            
+            // Update the user in the database
+            Task {
+                do {
+                    try await RealTimeManager.shared.updateUser(userId: userId, userData: userDict)
+                    print("User updated successfully in database")
+                    self.showAlert(title: "Success", message: "User profile updated successfully.")
+                } catch {
+                    print("Error updating user in database: \(error)")
+                    self.showAlert(title: "Error", message: "Failed to update user profile in database.")
                 }
             }
-        }
     }
-
+    
+    
     // Helper method to show alerts
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

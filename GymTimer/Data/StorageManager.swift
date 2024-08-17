@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import FirebaseStorage
+
+class StorageManager {
+    static let shared = StorageManager()
+    
+    let ref = Storage.storage().reference()
+    
+    private init() {
+        
+    }    
+}

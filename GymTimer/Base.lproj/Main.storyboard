@@ -115,13 +115,13 @@
                                     <action selector="selectImageTapped:" destination="MEb-38-Awe" eventType="touchUpInside" id="JMH-si-sW5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVg-Qv-bZu">
-                                <rect key="frame" x="142" y="351" width="130" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoY-fg-enS">
+                                <rect key="frame" x="143" y="382" width="130" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Upload Image"/>
                                 <connections>
-                                    <action selector="loadImageFromFirebase:" destination="MEb-38-Awe" eventType="touchUpInside" id="JhI-WV-CMp"/>
+                                    <action selector="updateUser:" destination="MEb-38-Awe" eventType="touchUpInside" id="7jS-uC-mD8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPs-4o-sN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="-1389"/>
+            <point key="canvasLocation" x="2231.8840579710145" y="-1389.1304347826087"/>
         </scene>
         <!--View Controller Workouts-->
         <scene sceneID="bdV-IE-qqj">
