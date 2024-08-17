@@ -32,7 +32,7 @@ class ViewControllerRegister: UIViewController {
                 print("User created successfully")
                 
                 // create a user object
-                let user = User(id: authResult!.user.uid, name: username!, email: email!, password: password!)
+                let user = User(id: authResult!.user.uid, name: username!, email: email!, password: password!, image: "")
                 
                 
                 // upload the user to the database

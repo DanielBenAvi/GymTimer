@@ -13,12 +13,67 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var imageLink: String = ""
+    
     override func viewDidLoad() {
             super.viewDidLoad()
             
             // Set a placeholder image
-            imageView.image = UIImage(named: "icon1")
+            imageView.image = UIImage(named: "profile")
+        
+        let userId = AuthManager.shared.getCurrentUserId()
+        
+        Task {
+                do {
+                    guard let userFromDB = await RealTimeManager.shared.getUserFromDB(userId: userId) else {
+                        print("User not found in database")
+                        return
+                    }
+                    
+                    print("User from DB: \(String(describing: userFromDB.toDictionary()))")
+                    imageLink = userFromDB.image
+                    
+                    print("Image link: \(imageLink)")
+                    
+                    // Load the image if imageLink is not empty
+                    if !imageLink.isEmpty {
+                        loadImage { [weak self] image in
+                            guard let self = self else { return }
+                            
+                            DispatchQueue.main.async {
+                                if let image = image {
+                                    self.imageView.image = image
+                                } else {
+                                    print("Failed to load image, keeping default profile image")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    
+    func loadProfileImage() async {
+        guard !imageLink.isEmpty else {
+            // imageLink is empty, keep the default "profile" image
+            return
         }
+        
+        do {
+            let storage = Storage.storage()
+            let storageRef = storage.reference(forURL: imageLink)
+            
+            let data = try await storageRef.data(maxSize: 5 * 1024 * 1024)
+            if let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        } catch {
+            print("Error downloading image: \(error)")
+            // Keep the default "profile" image
+        }
+    }
     
     @IBAction func selectImageTapped(_ sender: Any) {
             let imagePicker = UIImagePickerController()
@@ -64,31 +119,41 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    @IBAction func loadImageFromFirebase(_ sender: Any) {
+    func loadImage(completion: @escaping (UIImage?) -> Void) {
         let storage = Storage.storage()
         let storageRef = storage.reference()
         
-        // Replace "images/your_image.jpg" with the path to your image in Firebase Storage
-        let imageRef = storageRef.child("images/D8DAB44A-A004-4E89-AC91-BE8F17440AF7.jpg")
+        // Use the imageLink property
+        let imageRef = storageRef.child("images/\(imageLink)")
         
-        // Download in memory with a maximum allowed size of 10MB (10 * 1024 * 1024 bytes)
         imageRef.getData(maxSize: 10 * 1024 * 1024) { data, error in
             if let error = error {
                 print("Error downloading image: \(error.localizedDescription)")
-                // Show an alert to the user
                 DispatchQueue.main.async {
                     self.showAlert(title: "Error", message: "Failed to load image. Please try again.")
                 }
+                completion(nil)
+            } else if let imageData = data, let image = UIImage(data: imageData) {
+                completion(image)
             } else {
-                // Data for "images/your_image.jpg" is returned
-                if let imageData = data, let image = UIImage(data: imageData) {
-                    DispatchQueue.main.async {
-                        self.imageView.image = image
-                    }
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Error", message: "Failed to convert data to image.")
+                }
+                completion(nil)
+            }
+        }
+    }
+    
+    @IBAction func loadImageFromFirebase(_ sender: Any) {
+        loadImage { [weak self] image in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                if let image = image {
+                    self.imageView.image = image
                 } else {
-                    DispatchQueue.main.async {
-                        self.showAlert(title: "Error", message: "Failed to convert data to image.")
-                    }
+                    // The error alert is already shown in the loadImageFromFirebase function
+                    print("Failed to load image")
                 }
             }
         }

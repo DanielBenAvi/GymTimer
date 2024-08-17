@@ -9,12 +9,12 @@ class User {
     var image: String
     var workouts: [Workout]
     
-    init(id: String, name: String, email: String, password: String) {
+    init(id: String, name: String, email: String, password: String, image: String) {
         self.id = id
         self.name = name
         self.email = email
         self.password = password
-        self.image = ""
+        self.image = image
         self.workouts = []
     }
     

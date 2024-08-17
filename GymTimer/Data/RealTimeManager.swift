@@ -35,7 +35,7 @@ class RealTimeManager {
             
             let user = snapshot.value as! [String: Any]
             
-            return User(id: user["id"] as! String, name: user["name"] as! String, email: user["email"] as! String, password: user["password"] as! String)
+            return User(id: user["id"] as! String, name: user["name"] as! String, email: user["email"] as! String, password: user["password"] as! String, image: user["image"] as! String)
             
         } catch {
             print("Error getting user from DB")
