@@ -32,6 +32,8 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
         // Disable tap gesture initially
         tapGesture.isEnabled = false
         
+        uploadButton.isEnabled = false
+        
         // Set a placeholder image
         imageView.image = UIImage(named: "profile")
         
@@ -70,6 +72,7 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
     
     func enableImageTap() {
         tapGesture.isEnabled = true
+        uploadButton.isEnabled = true
     }
     
     
