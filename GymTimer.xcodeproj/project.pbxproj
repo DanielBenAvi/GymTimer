@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F6B6C1D2C70B92900683BE5 /* ViewControllerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B6C1C2C70B92900683BE5 /* ViewControllerProfile.swift */; };
+		7F6B6C1F2C70BDB000683BE5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7F6B6C1E2C70BDB000683BE5 /* FirebaseStorage */; };
+		7F6B6C212C70D39200683BE5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B6C202C70D39200683BE5 /* StorageManager.swift */; };
 		7F6FB3812C69E8CB00A90B03 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FB3802C69E8CB00A90B03 /* AuthManager.swift */; };
 		7F6FB3832C69E8E100A90B03 /* RealTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FB3822C69E8E100A90B03 /* RealTimeManager.swift */; };
 		7F6FB3852C69EEB600A90B03 /* ViewControllerSingleWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FB3842C69EEB600A90B03 /* ViewControllerSingleWorkout.swift */; };
@@ -36,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F6B6C1C2C70B92900683BE5 /* ViewControllerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProfile.swift; sourceTree = "<group>"; };
+		7F6B6C202C70D39200683BE5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		7F6FB3802C69E8CB00A90B03 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		7F6FB3822C69E8E100A90B03 /* RealTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeManager.swift; sourceTree = "<group>"; };
 		7F6FB3842C69EEB600A90B03 /* ViewControllerSingleWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSingleWorkout.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 			files = (
 				D406F1332C68BB330031F0BA /* FirebaseDatabase in Frameworks */,
 				D406F1312C68BB010031F0BA /* FirebaseAuth in Frameworks */,
+				7F6B6C1F2C70BDB000683BE5 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,7 @@
 				7F6FB3802C69E8CB00A90B03 /* AuthManager.swift */,
 				7F6FB3822C69E8E100A90B03 /* RealTimeManager.swift */,
 				D48E9D122C6BA95600150113 /* Valudation.swift */,
+				7F6B6C202C70D39200683BE5 /* StorageManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -97,6 +104,7 @@
 				D406F1462C6912760031F0BA /* ViewControllerAddExercise.swift */,
 				7F6FB3842C69EEB600A90B03 /* ViewControllerSingleWorkout.swift */,
 				D46655B32C6CCD60009F876C /* ViewControllerWorkoutTimer.swift */,
+				7F6B6C1C2C70B92900683BE5 /* ViewControllerProfile.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			packageProductDependencies = (
 				D406F1302C68BB010031F0BA /* FirebaseAuth */,
 				D406F1322C68BB330031F0BA /* FirebaseDatabase */,
+				7F6B6C1E2C70BDB000683BE5 /* FirebaseStorage */,
 			);
 			productName = GymTimer;
 			productReference = D4CC15142C68AAF100AB1326 /* GymTimer.app */;
@@ -264,6 +273,8 @@
 				D406F13C2C68D0A60031F0BA /* ViewControllerWorkouts.swift in Sources */,
 				D4CC15182C68AAF100AB1326 /* AppDelegate.swift in Sources */,
 				7F6FB3852C69EEB600A90B03 /* ViewControllerSingleWorkout.swift in Sources */,
+				7F6B6C1D2C70B92900683BE5 /* ViewControllerProfile.swift in Sources */,
+				7F6B6C212C70D39200683BE5 /* StorageManager.swift in Sources */,
 				D4CC151A2C68AAF100AB1326 /* SceneDelegate.swift in Sources */,
 				D4CC15312C68B2D100AB1326 /* Workout.swift in Sources */,
 				7F6FB3872C69F70500A90B03 /* CustomExerciseInViewWorkoutCell.swift in Sources */,
@@ -505,6 +516,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7F6B6C1E2C70BDB000683BE5 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CC15342C68B81800AB1326 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		D406F1302C68BB010031F0BA /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D4CC15342C68B81800AB1326 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

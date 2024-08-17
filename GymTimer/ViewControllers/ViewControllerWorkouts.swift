@@ -39,8 +39,10 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
     }
     
     @IBAction func logout(_ sender: Any) {
-        AuthManager.shared.logout()
-        self.moveToNewScreen(storyboard_id: "ViewControllerLogin", fullScreen: true)
+//        AuthManager.shared.logout()
+//        self.moveToNewScreen(storyboard_id: "ViewControllerLogin", fullScreen: true)
+        
+        self.moveToNewScreen(storyboard_id: "ViewControllerProfile", fullScreen: true)
     }
     
 }
