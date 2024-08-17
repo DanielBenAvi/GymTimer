@@ -106,15 +106,6 @@
                                 <rect key="frame" x="87" y="89" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiB-WB-svS">
-                                <rect key="frame" x="146" y="295" width="123" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Select image"/>
-                                <connections>
-                                    <action selector="selectImageTapped:" destination="MEb-38-Awe" eventType="touchUpInside" id="JMH-si-sW5"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoY-fg-enS">
                                 <rect key="frame" x="143" y="382" width="130" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -130,6 +121,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="CYC-dw-pd1" id="KSp-oG-TVN"/>
+                        <outlet property="uploadButton" destination="zoY-fg-enS" id="uq9-Yh-qQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPs-4o-sN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -172,14 +164,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomWorkoutsTableViewCell" id="ojg-r0-OzY" customClass="CustomWorkoutsTableViewCell" customModule="GymTimer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="382" height="37.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="382" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ojg-r0-OzY" id="0kY-zP-aCE" customClass="UILabel">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="37.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCg-zz-xU2">
-                                                    <rect key="frame" x="8" y="8.0000000000000018" width="366" height="21.666666666666671"/>
+                                                    <rect key="frame" x="8" y="8" width="366" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

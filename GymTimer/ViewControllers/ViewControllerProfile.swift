@@ -13,49 +13,73 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var uploadButton: UIButton!
+    
     var imageLink: String = ""
     
     var user: User!
     
+    var tapGesture: UITapGestureRecognizer!
+    
     override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            // Set a placeholder image
-            imageView.image = UIImage(named: "profile")
+        super.viewDidLoad()
+        
+        imageView.isUserInteractionEnabled = true
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imageView.addGestureRecognizer(tapGesture)
+        
+        // Disable tap gesture initially
+        tapGesture.isEnabled = false
+        
+        // Set a placeholder image
+        imageView.image = UIImage(named: "profile")
         
         let userId = AuthManager.shared.getCurrentUserId()
         
         Task {
-                do {
-                    guard let userFromDB = await RealTimeManager.shared.getUserFromDB(userId: userId) else {
-                        print("User not found in database")
-                        return
-                    }
-                    
-                    user = userFromDB
-                    
-                    print("User from DB: \(String(describing: user.toDictionary()))")
-                    
-                    imageLink = user.image
-                    
-                    print("Image link: \(imageLink)")
-                    
-                    // Load the image if imageLink is not empty
-                    if !imageLink.isEmpty {
-                        loadImage { [weak self] image in
-                            guard let self = self else { return }
-                            
-                            DispatchQueue.main.async {
-                                if let image = image {
-                                    self.imageView.image = image
-                                } else {
-                                    print("Failed to load image, keeping default profile image")
-                                }
+            do {
+                guard let userFromDB = await RealTimeManager.shared.getUserFromDB(userId: userId) else {
+                    print("User not found in database")
+                    enableImageTap()  // Enable tap if user not found
+                    return
+                }
+                
+                user = userFromDB
+                imageLink = user.image
+                
+                if !imageLink.isEmpty {
+                    loadImage { [weak self] image in
+                        guard let self = self else { return }
+                        
+                        DispatchQueue.main.async {
+                            if let image = image {
+                                self.imageView.image = image
+                            } else {
+                                print("Failed to load image, keeping default profile image")
                             }
+                            self.enableImageTap()  // Enable tap after attempting to load image
                         }
                     }
+                } else {
+                    enableImageTap()  // Enable tap if there's no image link
                 }
             }
+        }
+    }
+    
+    func enableImageTap() {
+        tapGesture.isEnabled = true
+    }
+    
+    
+    @objc func imageTapped() {
+        print("Image was tapped!")
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
     
     func loadProfileImage() async {
@@ -81,20 +105,14 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    @IBAction func selectImageTapped(_ sender: Any) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            present(imagePicker, animated: true, completion: nil)
-        }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let selectedImage = info[.originalImage] as? UIImage {
-                imageView.image = selectedImage
-                uploadImage(selectedImage)
-            }
-            dismiss(animated: true, completion: nil)
+        if let selectedImage = info[.originalImage] as? UIImage {
+            self.uploadButton.isEnabled = false
+            imageView.image = selectedImage
+            uploadImage(selectedImage)
         }
+        dismiss(animated: true, completion: nil)
+    }
     
     func uploadImage(_ image: UIImage) {
         guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
@@ -115,6 +133,8 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
             } else {
                 print("Image uploaded successfully")
                 self.imageLink = imageName
+                print("Image link: \(self.imageLink)")
+                self.uploadButton.isEnabled = true
                 // Here you can save the download URL if needed
                 imageRef.downloadURL { (url, error) in
                     if let downloadURL = url {
@@ -156,26 +176,25 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
         print("Updating user")
         
         let userId = user.id
-            
-            // Update the user object with the new image name
-            user.image = imageLink
-            
-            // Convert user object to dictionary
-            let userDict = user.toDictionary()
         
-        print("User dictionary: \(userDict)")
-            
-            // Update the user in the database
-            Task {
-                do {
-                    try await RealTimeManager.shared.updateUser(userId: userId, userData: userDict)
-                    print("User updated successfully in database")
-                    self.showAlert(title: "Success", message: "User profile updated successfully.")
-                } catch {
-                    print("Error updating user in database: \(error)")
-                    self.showAlert(title: "Error", message: "Failed to update user profile in database.")
-                }
+        // Update the user object with the new image name
+        user.image = imageLink
+        
+        // Convert user object to dictionary
+        let userDict = user.toDictionary()
+        
+        // Update the user in the database
+        Task {
+            do {
+                try await RealTimeManager.shared.updateUser(userId: userId, userData: userDict)
+                
+                print("User updated successfully in database")
+                self.showAlert(title: "Success", message: "User profile updated successfully.")
+            } catch {
+                print("Error updating user in database: \(error)")
+                self.showAlert(title: "Error", message: "Failed to update user profile in database.")
             }
+        }
     }
     
     

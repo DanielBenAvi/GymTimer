@@ -34,8 +34,6 @@ class Workout {
         print("saving workout to db of user: \(userId)")
         print(self.toDictionary())
         
-        
-        
         let ref = Database.database().reference()
         ref.child("users").child(userId).child("workouts").child(self.id).setValue(self.toDictionary())
     }

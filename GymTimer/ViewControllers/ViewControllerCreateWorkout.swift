@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-            
+    
     @IBOutlet weak var createWorkout_TF_name: UITextField!
     @IBOutlet weak var createWorkout_TBV_exercises: UITableView!
     
@@ -22,7 +22,7 @@ class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         
         createWorkout_TBV_exercises.delegate = self
         createWorkout_TBV_exercises.dataSource = self
@@ -30,7 +30,7 @@ class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func addExercise(_ sender: Any) {
-
+        
         
         
         
