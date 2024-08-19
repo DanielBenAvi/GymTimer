@@ -19,6 +19,10 @@ Gym Timer is your personal gym companion. It is a simple and easy to use app tha
 
 ## Deno Video
 
+
+https://github.com/user-attachments/assets/488ee5f4-0860-49f4-9f80-de57ef90526b
+
+
 ## Contributors
 
 | Name            | ID        |
