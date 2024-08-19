@@ -102,25 +102,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CYC-dw-pd1">
-                                <rect key="frame" x="87" y="89" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGb-FJ-7JU">
+                                <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T3A-1u-YHF"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Profile" id="z9s-El-NJ7">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.left" catalog="system" id="ZXL-0d-3xj">
+                                            <connections>
+                                                <action selector="backButton:" destination="MEb-38-Awe" id="ylu-t5-8Fg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" image="app.dashed" catalog="system" id="kPr-Xj-oLD">
+                                            <connections>
+                                                <action selector="lougout:" destination="MEb-38-Awe" id="1Le-1B-5Qf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CYC-dw-pd1">
+                                <rect key="frame" x="87" y="86" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Pep-xz-NIY"/>
+                                    <constraint firstAttribute="height" constant="240" id="vpO-VD-azX"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoY-fg-enS">
-                                <rect key="frame" x="143" y="382" width="130" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoY-fg-enS">
+                                <rect key="frame" x="142" y="334" width="130" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Upload Image"/>
                                 <connections>
                                     <action selector="updateUser:" destination="MEb-38-Awe" eventType="touchUpInside" id="7jS-uC-mD8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPn-jT-7Lc">
+                                <rect key="frame" x="16" y="377" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDk-er-lFM">
+                                <rect key="frame" x="16" y="406" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8UZ-hK-K6d"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zDk-er-lFM" firstAttribute="leading" secondItem="8UZ-hK-K6d" secondAttribute="leading" constant="16" id="9Pq-Ix-cLw"/>
+                            <constraint firstItem="CYC-dw-pd1" firstAttribute="centerX" secondItem="Jq3-vj-Bcz" secondAttribute="centerX" id="9XC-PD-4Xc"/>
+                            <constraint firstItem="8UZ-hK-K6d" firstAttribute="trailing" secondItem="zDk-er-lFM" secondAttribute="trailing" constant="16" id="UXz-oq-U3v"/>
+                            <constraint firstItem="nPn-jT-7Lc" firstAttribute="leading" secondItem="8UZ-hK-K6d" secondAttribute="leading" constant="16" id="fKc-re-1Wn"/>
+                            <constraint firstItem="CYC-dw-pd1" firstAttribute="top" secondItem="DGb-FJ-7JU" secondAttribute="bottom" constant="16" id="h9A-zO-Hn3"/>
+                            <constraint firstItem="8UZ-hK-K6d" firstAttribute="trailing" secondItem="nPn-jT-7Lc" secondAttribute="trailing" constant="16" id="iEU-wf-3VZ"/>
+                            <constraint firstItem="zDk-er-lFM" firstAttribute="top" secondItem="nPn-jT-7Lc" secondAttribute="bottom" constant="8" id="kLy-Vf-lOt"/>
+                            <constraint firstItem="zoY-fg-enS" firstAttribute="centerX" secondItem="Jq3-vj-Bcz" secondAttribute="centerX" id="nem-hm-kDB"/>
+                            <constraint firstItem="nPn-jT-7Lc" firstAttribute="top" secondItem="zoY-fg-enS" secondAttribute="bottom" constant="8" id="sAs-fp-YNJ"/>
+                            <constraint firstItem="zoY-fg-enS" firstAttribute="top" secondItem="CYC-dw-pd1" secondAttribute="bottom" constant="8" id="syB-jQ-W7R"/>
+                            <constraint firstItem="DGb-FJ-7JU" firstAttribute="leading" secondItem="8UZ-hK-K6d" secondAttribute="leading" id="u1K-Se-jmM"/>
+                            <constraint firstItem="DGb-FJ-7JU" firstAttribute="trailing" secondItem="8UZ-hK-K6d" secondAttribute="trailing" id="ulA-NZ-MRh"/>
+                            <constraint firstItem="DGb-FJ-7JU" firstAttribute="top" secondItem="8UZ-hK-K6d" secondAttribute="top" id="uy7-zS-zz6"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailLabel" destination="zDk-er-lFM" id="4IE-hK-aRH"/>
                         <outlet property="imageView" destination="CYC-dw-pd1" id="KSp-oG-TVN"/>
+                        <outlet property="nameLabel" destination="nPn-jT-7Lc" id="kgu-R4-sAM"/>
                         <outlet property="uploadButton" destination="zoY-fg-enS" id="uq9-Yh-qQj"/>
                     </connections>
                 </viewController>
@@ -146,7 +197,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Workouts" id="S3c-TU-yNL">
-                                        <barButtonItem key="leftBarButtonItem" title="logout" id="cYO-w6-lWl">
+                                        <barButtonItem key="leftBarButtonItem" title="profile" image="person.crop.circle.fill" catalog="system" id="cYO-w6-lWl">
                                             <connections>
                                                 <action selector="logout:" destination="8EH-t3-pL9" id="aDI-v0-yUV"/>
                                             </connections>
@@ -855,8 +906,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="app.dashed" catalog="system" width="128" height="114"/>
         <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="104"/>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="104"/>
         <image name="icon26" width="64" height="64"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <image name="play" catalog="system" width="117" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
@@ -867,10 +921,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

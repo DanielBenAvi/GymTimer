@@ -33,14 +33,7 @@ class ViewControllerWorkouts: UIViewController , UITableViewDelegate, UITableVie
         
     }
     
-    func preformSegue(identifier: String) {
-        self.performSegue(withIdentifier: identifier, sender: self)
-    }
-    
     @IBAction func logout(_ sender: Any) {
-//        AuthManager.shared.logout()
-//        self.moveToNewScreen(storyboard_id: "ViewControllerLogin", fullScreen: true)
-        
         self.moveToNewScreen(storyboard_id: "ViewControllerProfile", fullScreen: true)
     }
     

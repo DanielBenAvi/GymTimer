@@ -15,6 +15,10 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var uploadButton: UIButton!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
     var imageLink: String = ""
     
     var user: User!
@@ -42,12 +46,15 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
         Task {
             do {
                 guard let userFromDB = await RealTimeManager.shared.getUserFromDB(userId: userId) else {
-                    print("User not found in database")
                     enableImageTap()  // Enable tap if user not found
                     return
                 }
                 
                 user = userFromDB
+                nameLabel.text = user.name
+                emailLabel.text = user.email
+                
+                
                 imageLink = user.image
                 
                 if !imageLink.isEmpty {
@@ -58,7 +65,6 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
                             if let image = image {
                                 self.imageView.image = image
                             } else {
-                                print("Failed to load image, keeping default profile image")
                             }
                             self.enableImageTap()  // Enable tap after attempting to load image
                         }
@@ -77,7 +83,6 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
     
     
     @objc func imageTapped() {
-        print("Image was tapped!")
         
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -102,8 +107,7 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }
         } catch {
-            self.showAlert(title: "Error", message: "Error downloading image.")
-            print("Error downloading image: \(error)")
+            self.addAlert(title: "Error", message: "Error downloading image.")
             // Keep the default "profile" image
         }
     }
@@ -134,9 +138,7 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
             if let error = error {
                 print("Error uploading image: \(error.localizedDescription)")
             } else {
-                print("Image uploaded successfully")
                 self.imageLink = imageName
-                print("Image link: \(self.imageLink)")
                 self.uploadButton.isEnabled = true
                 // Here you can save the download URL if needed
                 imageRef.downloadURL { (url, error) in
@@ -158,26 +160,32 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
         
         imageRef.getData(maxSize: 10 * 1024 * 1024) { data, error in
             if let error = error {
-                print("Error downloading image: \(error.localizedDescription)")
                 DispatchQueue.main.async {
-                    self.showAlert(title: "Error", message: "Failed to load image. Please try again.")
+                    self.addAlert(title: "Error", message: "Failed to download image.")
                 }
                 completion(nil)
             } else if let imageData = data, let image = UIImage(data: imageData) {
                 completion(image)
             } else {
                 DispatchQueue.main.async {
-                    self.showAlert(title: "Error", message: "Failed to convert data to image.")
+                    self.addAlert(title: "Error", message: "Failed to download image.")
                 }
                 completion(nil)
             }
         }
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func lougout(_ sender: Any) {
+        AuthManager.shared.logout()
+        self.moveToNewScreen(storyboard_id: "ViewControllerLogin", fullScreen: true)
+    }
+    
     
     @IBAction func updateUser(_ sender: Any) {
-        print("Updating user")
-        
         let userId = user.id
         
         // Update the user object with the new image name
@@ -190,22 +198,11 @@ class ViewControllerProfile: UIViewController, UIImagePickerControllerDelegate, 
         Task {
             do {
                 try await RealTimeManager.shared.updateUser(userId: userId, userData: userDict)
-                
-                print("User updated successfully in database")
-                self.showAlert(title: "Success", message: "User profile updated successfully.")
+                addAlert(title: "Success", message: "User profile updated successfully.")
             } catch {
-                print("Error updating user in database: \(error)")
-                self.showAlert(title: "Error", message: "Failed to update user profile in database.")
+                addAlert(title: "Error", message: "Failed to update user profile. Please try again.")
             }
         }
-    }
-    
-    
-    // Helper method to show alerts
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
     }
     
 }
