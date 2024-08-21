@@ -30,8 +30,8 @@
             filePath = "GymTimer/ViewControllers/ViewControllerWorkoutTimer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "6"
-            endingLineNumber = "6"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
             landmarkName = "ViewControllerWorkoutTimer"
             landmarkType = "3">
          </BreakpointContent>

@@ -1,5 +1,7 @@
 import Foundation
 import UIKit
+import AudioToolbox
+
 
 class ViewControllerWorkoutTimer: UIViewController {
     @IBOutlet weak var startButton: UIButton!
@@ -85,6 +87,7 @@ class ViewControllerWorkoutTimer: UIViewController {
     
     
     func stopTimer() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         timer.invalidate()
         activeTimer = false
         inActiveExercise = false
