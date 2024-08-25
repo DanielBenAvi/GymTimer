@@ -30,10 +30,6 @@ class ViewControllerCreateWorkout: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func addExercise(_ sender: Any) {
-        
-        
-        
-        
         let vc = storyboard?.instantiateViewController(identifier: "ViewControllerAddExercise") as! ViewControllerAddExercise
         self.present(vc, animated: true, completion: nil)
     }

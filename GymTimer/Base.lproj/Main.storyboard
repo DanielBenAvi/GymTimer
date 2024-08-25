@@ -215,14 +215,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomWorkoutsTableViewCell" id="ojg-r0-OzY" customClass="CustomWorkoutsTableViewCell" customModule="GymTimer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="382" height="36.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="382" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ojg-r0-OzY" id="0kY-zP-aCE" customClass="UILabel">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="36.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCg-zz-xU2">
-                                                    <rect key="frame" x="8" y="8.0000000000000018" width="366" height="20.666666666666671"/>
+                                                    <rect key="frame" x="8" y="8" width="366" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -527,11 +527,18 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Create Workout" id="Ksq-Aq-702">
-                                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.down" catalog="system" id="ISy-nj-Sup">
-                                            <connections>
-                                                <action selector="save_workout:" destination="igD-GY-J5p" id="d7X-jn-uNu"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Save" image="square.and.arrow.down" catalog="system" id="ISy-nj-Sup">
+                                                <connections>
+                                                    <action selector="save_workout:" destination="igD-GY-J5p" id="d7X-jn-uNu"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="add Exesice" image="plus" catalog="system" id="EFr-a0-hpl">
+                                                <connections>
+                                                    <action selector="addExercise:" destination="igD-GY-J5p" id="A6f-gB-nqQ"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -544,7 +551,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q5R-Nt-8ms">
-                                <rect key="frame" x="16" y="136" width="382" height="526"/>
+                                <rect key="frame" x="16" y="136" width="382" height="584"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CostomExercisesTableViewCell" id="4Nh-8z-6qm" customClass="CostomExercisesTableViewCell" customModule="GymTimer" customModuleProvider="target">
@@ -577,33 +584,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg1-KZ-jSC">
-                                <rect key="frame" x="16" y="670" width="382" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="YLM-ri-ytZ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add New Exercise"/>
-                                <connections>
-                                    <action selector="addExercise:" destination="igD-GY-J5p" eventType="touchUpInside" id="1yG-Ny-VHx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WI1-Kq-GUq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WI1-Kq-GUq" firstAttribute="trailing" secondItem="q5R-Nt-8ms" secondAttribute="trailing" constant="16" id="36Y-cD-qmJ"/>
-                            <constraint firstItem="WI1-Kq-GUq" firstAttribute="trailing" secondItem="Cg1-KZ-jSC" secondAttribute="trailing" constant="16" id="9IE-x4-OXD"/>
                             <constraint firstItem="4VC-AA-pbo" firstAttribute="leading" secondItem="WI1-Kq-GUq" secondAttribute="leading" constant="16" id="Cs3-sw-FAO"/>
                             <constraint firstItem="4VC-AA-pbo" firstAttribute="top" secondItem="JcE-ag-3ci" secondAttribute="bottom" constant="8" id="HiD-xP-tOg"/>
-                            <constraint firstItem="Cg1-KZ-jSC" firstAttribute="top" secondItem="q5R-Nt-8ms" secondAttribute="bottom" constant="8" id="JtR-xg-snM"/>
                             <constraint firstItem="q5R-Nt-8ms" firstAttribute="leading" secondItem="WI1-Kq-GUq" secondAttribute="leading" constant="16" id="MLS-Oq-uXJ"/>
-                            <constraint firstItem="Cg1-KZ-jSC" firstAttribute="leading" secondItem="WI1-Kq-GUq" secondAttribute="leading" constant="16" id="bMy-0m-clN"/>
-                            <constraint firstItem="WI1-Kq-GUq" firstAttribute="bottom" secondItem="Cg1-KZ-jSC" secondAttribute="bottom" constant="16" id="bbl-Dw-s1r"/>
                             <constraint firstItem="JcE-ag-3ci" firstAttribute="top" secondItem="WI1-Kq-GUq" secondAttribute="top" id="fiY-ok-bQi"/>
                             <constraint firstItem="JcE-ag-3ci" firstAttribute="leading" secondItem="WI1-Kq-GUq" secondAttribute="leading" id="mqt-qY-W9u"/>
                             <constraint firstItem="JcE-ag-3ci" firstAttribute="trailing" secondItem="WI1-Kq-GUq" secondAttribute="trailing" id="qUf-uR-pS0"/>
                             <constraint firstItem="WI1-Kq-GUq" firstAttribute="trailing" secondItem="4VC-AA-pbo" secondAttribute="trailing" constant="16" id="uHW-59-YrE"/>
+                            <constraint firstItem="WI1-Kq-GUq" firstAttribute="bottom" secondItem="q5R-Nt-8ms" secondAttribute="bottom" constant="16" id="uQp-cp-Ecl"/>
                             <constraint firstItem="q5R-Nt-8ms" firstAttribute="top" secondItem="4VC-AA-pbo" secondAttribute="bottom" constant="8" id="vum-mc-hfI"/>
                         </constraints>
                     </view>
@@ -631,7 +624,13 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="kmR-fw-iZZ"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Add New Exercise" id="W0x-mW-hOa" userLabel="Add New Exercise"/>
+                                    <navigationItem title="Add New Exercise" id="W0x-mW-hOa" userLabel="Add New Exercise">
+                                        <barButtonItem key="rightBarButtonItem" title="add exercise" image="square.and.arrow.down" catalog="system" id="Ywq-56-yyq">
+                                            <connections>
+                                                <action selector="unwindToPreviousViewControllerWithSegue:" destination="4Da-Pl-QM5" id="VQb-Fr-gU1"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Exercise Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q13-mV-cGF">
@@ -722,19 +721,8 @@
                                     <constraint firstAttribute="height" constant="50" id="ya2-g6-Zgn"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNZ-nY-Mwi">
-                                <rect key="frame" x="16" y="670" width="382" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="F2s-5v-jIA"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add Exercise"/>
-                                <connections>
-                                    <action selector="unwindToPreviousViewControllerWithSegue:" destination="4Da-Pl-QM5" eventType="touchUpInside" id="Dqr-sc-BHC"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-wv-zSd">
-                                <rect key="frame" x="16" y="376" width="382" height="278"/>
+                                <rect key="frame" x="16" y="376" width="382" height="344"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GtL-BL-zsL">
                                     <size key="itemSize" width="128" height="128"/>
@@ -779,12 +767,9 @@
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="4oK-aZ-gxt" secondAttribute="trailing" constant="16" id="C77-vu-h63"/>
                             <constraint firstItem="Q13-mV-cGF" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="FUW-vy-gPl"/>
                             <constraint firstItem="F6w-7g-gad" firstAttribute="top" secondItem="4oK-aZ-gxt" secondAttribute="bottom" constant="8" id="Ghn-ig-g3o"/>
-                            <constraint firstItem="BtD-OC-MS6" firstAttribute="bottom" secondItem="zNZ-nY-Mwi" secondAttribute="bottom" constant="16" id="HUB-yS-4HM"/>
                             <constraint firstItem="Q13-mV-cGF" firstAttribute="top" secondItem="KoC-q7-Ro0" secondAttribute="bottom" constant="8" id="J5x-s1-qNu"/>
-                            <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="zNZ-nY-Mwi" secondAttribute="trailing" constant="16" id="JYL-yH-wXQ"/>
                             <constraint firstItem="4oK-aZ-gxt" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="NSX-Zc-fpg"/>
                             <constraint firstItem="KoC-q7-Ro0" firstAttribute="top" secondItem="BtD-OC-MS6" secondAttribute="top" id="OI1-Vy-ker"/>
-                            <constraint firstItem="zNZ-nY-Mwi" firstAttribute="top" secondItem="fZU-wv-zSd" secondAttribute="bottom" constant="16" id="Oyt-gv-sdE"/>
                             <constraint firstItem="fZU-wv-zSd" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="PiL-YB-BS5"/>
                             <constraint firstItem="4oK-aZ-gxt" firstAttribute="top" secondItem="252-TQ-mFi" secondAttribute="bottom" constant="8" id="TIS-FZ-bbp"/>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="Q13-mV-cGF" secondAttribute="trailing" constant="16" id="UWb-FZ-bHc"/>
@@ -795,9 +780,9 @@
                             <constraint firstItem="F6w-7g-gad" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="a9h-QD-jpd"/>
                             <constraint firstItem="KoC-q7-Ro0" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" id="cUK-ED-Hbd"/>
                             <constraint firstItem="252-TQ-mFi" firstAttribute="top" secondItem="BaM-kq-hq7" secondAttribute="bottom" constant="8" id="drh-ku-5id"/>
-                            <constraint firstItem="zNZ-nY-Mwi" firstAttribute="leading" secondItem="BtD-OC-MS6" secondAttribute="leading" constant="16" id="drs-N5-vMl"/>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="252-TQ-mFi" secondAttribute="trailing" constant="16" id="g7z-Su-8xE"/>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="F6w-7g-gad" secondAttribute="trailing" constant="16" id="kuk-JZ-4Dv"/>
+                            <constraint firstItem="BtD-OC-MS6" firstAttribute="bottom" secondItem="fZU-wv-zSd" secondAttribute="bottom" constant="16" id="paA-rY-Ps2"/>
                             <constraint firstItem="BtD-OC-MS6" firstAttribute="trailing" secondItem="fZU-wv-zSd" secondAttribute="trailing" constant="16" id="sl5-Vq-KHw"/>
                         </constraints>
                     </view>
